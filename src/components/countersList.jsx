@@ -23,14 +23,14 @@ const CountersList = () => {
 
   const handleIncrement = (id) => {
     const updatedIncCounters = counters.map((c) =>
-      c.id === id ? (c.value = c.value + 1) : c.value
+      c.id === id ? { ...c, value: c.value + 1 } : c
     );
     setCounters(updatedIncCounters);
   };
 
   const handleDecrement = (id) => {
     const updatedDecCounters = counters.map((c) =>
-      c.id === id ? (c.value = c.value - 1) : c.value
+      c.id === id ? { ...c, value: c.value - 1 } : c
     );
     setCounters(updatedDecCounters);
   };
